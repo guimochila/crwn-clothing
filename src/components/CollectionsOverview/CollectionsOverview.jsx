@@ -6,7 +6,6 @@ import CollectionPreview from '../../components/CollectionPreview';
 import { selectCollectionsForPreview } from '../../store/shop/shop.selectors';
 
 function CollectionsOverview({ collections }) {
-  console.log(collections);
   return (
     <div className="collections-overview">
       {collections.map(({ id, ...collectionProps }) => (
