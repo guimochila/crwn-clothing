@@ -23,8 +23,13 @@ const persistConfig = {
 const rootReducerWithPersistor = persistReducer(persistConfig, rootReducer);
 
 export default function configureStore() {
-  const middlewares = [logger];
-  const middlewareEnhancer = applyMiddleware(...middlewares);
+  const middlewares = [];
+  const middlewaresForDev = [logger];
+
+  const isDevelopment =
+    process.env.NODE_ENV === 'development' ? middlewaresForDev : [];
+
+  const middlewareEnhancer = applyMiddleware(...middlewares, ...isDevelopment);
 
   const store = createStore(rootReducerWithPersistor, middlewareEnhancer);
   const persistor = persistStore(store);
