@@ -15,7 +15,7 @@ function Header({ currentUser, hidden }) {
   let firstName;
 
   if (currentUser) {
-    firstName = currentUser.displayName.split(' ')[0];
+    [firstName] = currentUser.displayName.split(' ');
   }
 
   return (
