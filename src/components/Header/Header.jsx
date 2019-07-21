@@ -12,12 +12,21 @@ import CartIcon from '../CartIcon';
 import CartDropDown from '../CartDropDown';
 
 function Header({ currentUser, hidden }) {
+  let firstName;
+
+  if (currentUser) {
+    firstName = currentUser.displayName.split(' ')[0];
+  }
+
   return (
     <div className="header">
       <Link to="/" className="logo-container">
         <Logo className="logo" />
       </Link>
       <div className="options">
+        {firstName && (
+          <span className="header-welcome">Welcome {firstName}</span>
+        )}
         <Link to="/shop" className="option">
           SHOP
         </Link>
