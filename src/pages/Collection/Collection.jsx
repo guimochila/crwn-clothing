@@ -1,10 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import './Collection.scss';
+import NotFound from '../NotFound';
 import CollectionItem from '../../components/CollectionItem';
 import { selectCollection } from '../../store/shop/shop.selectors';
 
 function CollectionPage({ collection }) {
+  if (!collection) {
+    return <NotFound />;
+  }
+
   const { title, items } = collection;
   return (
     <div className="collection-page">

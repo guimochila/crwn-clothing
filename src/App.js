@@ -9,6 +9,7 @@ import ShopPage from './pages/ShopPage';
 import SigninAndSignupPage from './pages/SigninAndSignupPage';
 import CheckoutPage from './pages/Checkout';
 import Header from './components/Header';
+import NotFound from './pages/NotFound';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './store/user/user.actions';
 import { selectCurrentUser } from './store/user/user.selectors';
@@ -58,6 +59,7 @@ class App extends React.Component {
               );
             }}
           />
+          <Route component={NotFound} />
         </Switch>
       </div>
     );
