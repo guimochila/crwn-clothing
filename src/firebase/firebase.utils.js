@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
+import md5 from 'blueimp-md5';
 
 const config = {
   apiKey: 'AIzaSyBuSuLqKF7pyBpRHjf0r7Mt_IJQ8Wa2OiM',
@@ -24,12 +25,20 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
+    let { photoURL } = userAuth;
     const createdAt = new Date();
+
+    if (!photoURL) {
+      photoURL = `https://www.gravatar.com/avatar/${md5(email)}?d=mp&s=64`;
+    } else {
+      photoURL = `${photoURL}?sz=64`;
+    }
 
     try {
       await userRef.set({
         displayName,
         email,
+        photoURL,
         createdAt,
         ...additionalData,
       });

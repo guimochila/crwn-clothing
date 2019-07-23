@@ -14,14 +14,14 @@ import {
   OptionsContainer,
   OptionLink,
   HeaderWelcome,
+  ProfileImageContainer,
+  ProfileImage,
 } from './Header.styles';
 
 function Header({ currentUser, hidden }) {
-  let firstName;
+  const { displayName, photoURL } = currentUser || {};
 
-  if (currentUser) {
-    [firstName] = currentUser.displayName.split(' ');
-  }
+  const firstName = displayName ? displayName.split(' ')[0] : null;
 
   return (
     <HeaderContainer>
@@ -29,7 +29,6 @@ function Header({ currentUser, hidden }) {
         <Logo className="logo" />
       </LogoContainer>
       <OptionsContainer>
-        {firstName && <HeaderWelcome>Welcome {firstName}</HeaderWelcome>}
         <OptionLink to="/shop">SHOP</OptionLink>
         <OptionLink to="/shop">CONTACT</OptionLink>
         {currentUser ? (
@@ -40,6 +39,10 @@ function Header({ currentUser, hidden }) {
           <OptionLink to="/signin">SIGN IN</OptionLink>
         )}
         <CartIcon />
+        {firstName && <HeaderWelcome>Welcome {firstName}</HeaderWelcome>}
+        <ProfileImageContainer>
+          <ProfileImage photoURL={photoURL} />
+        </ProfileImageContainer>
       </OptionsContainer>
       {hidden ? null : <CartDropDown />}
     </HeaderContainer>

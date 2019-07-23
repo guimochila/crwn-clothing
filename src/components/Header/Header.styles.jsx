@@ -29,5 +29,32 @@ export const OptionLink = styled(Link)`
 `;
 
 export const HeaderWelcome = styled.span`
-  margin-right: 15px;
+  margin-left: 15px;
+`;
+
+export const ProfileImageContainer = styled.div`
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+`;
+
+export const ProfileImage = styled.span`
+  background-size: 32px 32px;
+  border-radius: 50%;
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  height: 32px;
+  width: 32px;
+
+  &::before {
+    display: inline-block;
+    content: url(${({ photoURL }) => photoURL});
+    transform: scale(0.5);
+    transform-origin: left 0;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+  }
 `;
