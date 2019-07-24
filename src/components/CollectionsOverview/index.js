@@ -1,3 +1,4 @@
 import CollectionsOverview from './CollectionsOverview';
+import CollectionsOverviewContainer from './CollectionsOverview.container';
 
-export default CollectionsOverview;
+export { CollectionsOverview, CollectionsOverviewContainer };
