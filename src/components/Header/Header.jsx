@@ -7,7 +7,7 @@ import { auth } from '../../firebase/firebase.utils';
 import { selectCurrentUser } from '../../store/user/user.selectors';
 import { selectCartHidden } from '../../store/cart/cart.selectors';
 import CartIcon from '../CartIcon';
-import CartDropDown from '../CartDropDown';
+import { CartDropDownContainer } from '../CartDropDown';
 import {
   HeaderContainer,
   LogoContainer,
@@ -44,7 +44,7 @@ function Header({ currentUser, hidden }) {
           <ProfileImage photoURL={photoURL} />
         </ProfileImageContainer>
       </OptionsContainer>
-      {hidden ? null : <CartDropDown />}
+      {hidden ? null : <CartDropDownContainer />}
     </HeaderContainer>
   );
 }

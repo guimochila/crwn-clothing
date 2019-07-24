@@ -1,3 +1,4 @@
 import CartDropDown from './CartDropDown';
+import CartDropDownContainer from './CartDropDown.container';
 
-export default CartDropDown;
+export { CartDropDown, CartDropDownContainer };
