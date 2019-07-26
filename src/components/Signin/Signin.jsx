@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   SignInContainer,
@@ -7,7 +8,10 @@ import {
 } from './Signin.styles';
 import FormInput from '../FormInput';
 import CustomButtom from '../CustomButtom';
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from '../../store/user/user.actions';
 
 class Signin extends React.Component {
   constructor(props) {
@@ -22,13 +26,9 @@ class Signin extends React.Component {
   handleSubmit = async e => {
     e.preventDefault();
     const { email, password } = this.state;
+    const { emailSignInStart } = this.props;
 
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: '', password: '' });
-    } catch (error) {
-      console.error(error);
-    }
+    emailSignInStart(email, password);
   };
 
   handleChange = e => {
@@ -38,6 +38,7 @@ class Signin extends React.Component {
   };
 
   render() {
+    const { googleSignInStart } = this.props;
     return (
       <SignInContainer>
         <SignInTitle>I already have an account</SignInTitle>
@@ -64,8 +65,8 @@ class Signin extends React.Component {
           <ButtonsBarContainer>
             <CustomButtom type="submit">Sign In</CustomButtom>
             <CustomButtom
-              type="submit"
-              onClick={signInWithGoogle}
+              type="button"
+              onClick={googleSignInStart}
               isGoogleSignIn
             >
               Sign in with Google
@@ -77,4 +78,13 @@ class Signin extends React.Component {
   }
 }
 
-export default Signin;
+const mapDispatchToProps = dispatch => ({
+  googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password })),
+});
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Signin);
