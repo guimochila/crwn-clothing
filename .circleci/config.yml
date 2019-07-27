@@ -12,17 +12,23 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
+          working_directory: ~/crwn-clothing/functions
           keys:
             - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
+      - run:
+          working_directory: ~/crwn-clothing/functions
+          command: yarn install
 
       - save_cache:
+          working_directory: ~/crwn-clothing/functions
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # Deploy
-      - run: yarn run deploy
+      - run:
+          working_directory: ~/crwn-clothing/functions
+          command: yarn run deploy
