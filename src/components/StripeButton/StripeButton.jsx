@@ -8,7 +8,7 @@ function StripeButton({ price }) {
 
   const ontoken = async token => {
     try {
-      const res = await axios('/payment', {
+      const res = await axios('/.netlify/functions/payment', {
         method: 'post',
         data: {
           amount: priceForStripe,
