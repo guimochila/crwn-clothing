@@ -9,7 +9,6 @@ function StripeButton({ price }) {
   const ontoken = async token => {
     try {
       const res = await axios('/payment', {
-        baseURL: process.env.REACT_APP_ENDPOINT_URL,
         method: 'post',
         data: {
           amount: priceForStripe,
