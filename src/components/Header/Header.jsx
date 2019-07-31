@@ -4,9 +4,8 @@ import { createStructuredSelector } from 'reselect';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { selectCurrentUser } from '../../store/user/user.selectors';
-import { selectCartHidden } from '../../store/cart/cart.selectors';
 import { signOutStart } from '../../store/user/user.actions';
-import CartIcon from '../CartIcon';
+import { default as CartIcon } from '../CartIcon';
 import { CartDropDownContainer } from '../CartDropDown';
 import {
   HeaderContainer,
@@ -51,7 +50,6 @@ function Header({ currentUser, hidden, signOutStart }) {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
-  hidden: selectCartHidden,
 });
 
 const mapDispatchToProps = dispatch => ({

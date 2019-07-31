@@ -1,3 +1,3 @@
-import Header from './Header';
+import HeaderComposed from './Header.composed';
 
-export default Header;
+export default HeaderComposed;

@@ -8,7 +8,7 @@ import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import SigninAndSignupPage from './pages/SigninAndSignupPage';
 import CheckoutPage from './pages/Checkout';
-import Header from './components/Header';
+import { default as Header } from './components/Header';
 import NotFound from './pages/NotFound';
 import { checkUserSession } from './store/user/user.actions';
 import { selectCurrentUser } from './store/user/user.selectors';
