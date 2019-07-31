@@ -1,3 +1,3 @@
-import CartIcon from './CartIcon';
+import CartIconComposed from './CartIcon.composed';
 
-export default CartIcon;
+export default CartIconComposed;
