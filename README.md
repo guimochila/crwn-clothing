@@ -6,9 +6,14 @@ Website address https://crwn-live.guimochila.com/
 
 ### Tech used
 
-* React
-* Redux
-* Redux-Sagas
-* Stripe integration
-* Styled-components
-* Netlify Lambda functions
+- React
+- Redux
+- Redux-Sagas
+- Stripe integration
+- Styled-components
+- Netlify Lambda functions
+
+### Branches
+
+- master: Using all techs mentioned above.
+- graphql-apollo: Removed Redux and its ecosystem to Apollo client for GraphQL.
