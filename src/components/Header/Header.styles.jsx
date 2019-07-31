@@ -7,12 +7,25 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+
+  @media screen and (max-width: 800px) {
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
 `;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
   width: 70px;
   padding: 25px;
+
+  @media screen and (max-width: 800px) {
+    width: 50px;
+    padding: 0;
+  }
 `;
 
 export const OptionsContainer = styled.div`
@@ -21,6 +34,10 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const OptionLink = styled(Link)`
@@ -30,6 +47,13 @@ export const OptionLink = styled(Link)`
 
 export const HeaderWelcome = styled.span`
   margin-left: 15px;
+
+  @media screen and (max-width: 800px) {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    margin-left: 0;
+  }
 `;
 
 export const ProfileImageContainer = styled.div`
