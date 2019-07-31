@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import {
   CollectionPageContainer,
@@ -8,7 +7,6 @@ import {
 } from './Collection.styles';
 import NotFound from '../NotFound';
 import CollectionItem from '../../components/CollectionItem';
-import { selectCollection } from '../../store/shop/shop.selectors';
 
 function CollectionPage({ collection }) {
   if (!collection) {
@@ -29,8 +27,4 @@ function CollectionPage({ collection }) {
   );
 }
 
-const mapStateToProps = (state, ownProps) => ({
-  collection: selectCollection(ownProps.match.params.collectionId)(state),
-});
-
-export default connect(mapStateToProps)(CollectionPage);
+export default CollectionPage;

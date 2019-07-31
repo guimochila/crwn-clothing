@@ -1,4 +1,3 @@
-import CollectionPage from './Collection';
-import CollectionPageContainer from './Collection.container';
+import CollectionPageComposed from './Collection.composed';
 
-export { CollectionPage, CollectionPageContainer };
+export default CollectionPageComposed;
