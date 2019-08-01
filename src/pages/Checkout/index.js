@@ -1,3 +1,3 @@
-import Checkout from './Checkout';
+import CheckoutComposed from './Checkout.composed';
 
-export default Checkout;
+export default CheckoutComposed;

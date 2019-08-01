@@ -1,22 +1,36 @@
 import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
+import { compose, graphql } from 'react-apollo';
 
 import { GlobalStyle } from './global.styles';
 import HomePage from './pages/HomePage';
 import ShopPage from './pages/ShopPage';
 import SigninAndSignupPage from './pages/SigninAndSignupPage';
-import CheckoutPage from './pages/Checkout';
+import { default as CheckoutPage } from './pages/Checkout';
 import { default as Header } from './components/Header';
 import NotFound from './pages/NotFound';
-import { checkUserSession } from './store/user/user.actions';
-import { selectCurrentUser } from './store/user/user.selectors';
+import { GET_CURRENT_USER, SET_CURRENT_USER } from './graphql/queries';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
-function App({ checkUserSession, currentUser }) {
+function App({ currentUser, setCurrentUser }) {
   useEffect(() => {
-    checkUserSession();
-  }, [checkUserSession]);
+    const unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          });
+        });
+      } else {
+        setCurrentUser(userAuth);
+      }
+    });
+
+    return () => unsubscribeFromAuth();
+  }, [setCurrentUser]);
 
   return (
     <div>
@@ -30,7 +44,7 @@ function App({ checkUserSession, currentUser }) {
           exact
           path="/signin"
           render={() => {
-            return currentUser ? <Redirect to="/" /> : <SigninAndSignupPage />;
+            return !currentUser ? <Redirect to="/" /> : <SigninAndSignupPage />;
           }}
         />
         <Route component={NotFound} />
@@ -39,15 +53,7 @@ function App({ checkUserSession, currentUser }) {
   );
 }
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
-});
-
-const mapDispathToProps = dispatch => ({
-  checkUserSession: () => dispatch(checkUserSession()),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispathToProps,
+export default compose(
+  graphql(GET_CURRENT_USER, { name: 'currentUser' }),
+  graphql(SET_CURRENT_USER, { name: 'setCurrentUser' }),
 )(App);

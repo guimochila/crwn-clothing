@@ -5,6 +5,10 @@ import { resolvers, typeDefs } from './graphql/resolvers';
 
 const INITIAL_STATE = {
   cartHidden: true,
+  cartItems: [],
+  itemCount: 0,
+  cartTotal: 0,
+  currentUser: null,
 };
 
 function configureHttpLink(uri) {

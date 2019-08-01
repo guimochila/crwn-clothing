@@ -6,7 +6,7 @@ import {
   TitleLink,
   PreviewContainer,
 } from './CollectionPreview.styles';
-import CollectionItem from '../CollectionItem';
+import { default as CollectionItem } from '../CollectionItem';
 
 function CollectionPreview({ title, items, match }) {
   return (

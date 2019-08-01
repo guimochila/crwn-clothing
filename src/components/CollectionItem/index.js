@@ -1,3 +1,3 @@
-import CollectionItem from './CollectionItem';
+import CollectionItemComposed from './CollectionItem.composed';
 
-export default CollectionItem;
+export default CollectionItemComposed;

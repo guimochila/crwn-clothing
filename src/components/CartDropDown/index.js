@@ -1,4 +1,4 @@
 import CartDropDown from './CartDropDown';
-import CartDropDownContainer from './CartDropDown.container';
+import CartDropDownComposed from './CartDropDown.composed';
 
-export { CartDropDown, CartDropDownContainer };
+export { CartDropDown, CartDropDownComposed };

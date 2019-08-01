@@ -7,9 +7,8 @@ import {
   CartDropDownButton,
   EmptyMessageContainer,
 } from './CartDropDown.styles';
-import { toggleCartHidden } from '../../store/cart/cart.actions';
 
-function CartDropDown({ cartItems, history, dispatch }) {
+function CartDropDown({ cartItems, history, toggleCartHidden }) {
   return (
     <CartDropDownContainer>
       <CartItemsContainer>
@@ -24,7 +23,7 @@ function CartDropDown({ cartItems, history, dispatch }) {
       <CartDropDownButton
         onClick={() => {
           history.push('/checkout');
-          dispatch(toggleCartHidden());
+          toggleCartHidden();
         }}
       >
         GO TO CHECKOUT
