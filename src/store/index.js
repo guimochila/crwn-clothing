@@ -23,8 +23,7 @@ const persistConfig = {
 };
 
 const rootReducerWithPersistor = persistReducer(persistConfig, rootReducer);
-const reduxDevTool =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware();
 
 export default function configureStore() {
@@ -34,9 +33,8 @@ export default function configureStore() {
   const isDevelopment =
     process.env.NODE_ENV === 'development' ? middlewaresForDev : [];
 
-  const middlewareEnhancer = compose(
+  const middlewareEnhancer = composeEnhancers(
     applyMiddleware(...middlewares, ...isDevelopment),
-    reduxDevTool,
   );
 
   const store = createStore(rootReducerWithPersistor, middlewareEnhancer);
