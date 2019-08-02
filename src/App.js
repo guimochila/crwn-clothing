@@ -7,6 +7,7 @@ import { GlobalStyle } from './global.styles';
 import Header from './components/Header';
 import NotFound from './pages/NotFound';
 import Spinner from './components/Spinner';
+import Error from './components/Error';
 import { checkUserSession } from './store/user/user.actions';
 import { selectCurrentUser } from './store/user/user.selectors';
 
@@ -25,22 +26,24 @@ function App({ checkUserSession, currentUser }) {
       <GlobalStyle />
       <Header />
       <Switch>
-        <Suspense fallback={<Spinner />}>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/checkout" component={CheckoutPage} />
-          <Route
-            exact
-            path="/signin"
-            render={() => {
-              return currentUser ? (
-                <Redirect to="/" />
-              ) : (
-                <SigninAndSignupPage />
-              );
-            }}
-          />
-        </Suspense>
+        <Error>
+          <Suspense fallback={<Spinner />}>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
+            <Route
+              exact
+              path="/signin"
+              render={() => {
+                return currentUser ? (
+                  <Redirect to="/" />
+                ) : (
+                  <SigninAndSignupPage />
+                );
+              }}
+            />
+          </Suspense>
+        </Error>
         <Route component={NotFound} />
       </Switch>
     </div>
