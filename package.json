@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^24.0.17",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "netlify-lambda": "^1.5.1",
