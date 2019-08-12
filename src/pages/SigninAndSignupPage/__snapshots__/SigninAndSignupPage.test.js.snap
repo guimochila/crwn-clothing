@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Signup and SignIn page should render SigninAndSignup page 1`] = `
+<styled.div>
+  <Connect(Signin) />
+  <Connect(Signup) />
+</styled.div>
+`;
