@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardDropDown component should render CardDropDown 1`] = `
+<styled.div>
+  <styled.div>
+    <Memo(CartItem)
+      item={
+        Object {
+          "id": 1,
+        }
+      }
+      key="1"
+    />
+    <Memo(CartItem)
+      item={
+        Object {
+          "id": 2,
+        }
+      }
+      key="2"
+    />
+    <Memo(CartItem)
+      item={
+        Object {
+          "id": 3,
+        }
+      }
+      key="3"
+    />
+  </styled.div>
+  <CartDropDownButton
+    onClick={[Function]}
+  >
+    GO TO CHECKOUT
+  </CartDropDownButton>
+</styled.div>
+`;
