@@ -14,7 +14,7 @@ import {
   removeItem,
 } from '../../store/cart/cart.actions';
 
-function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
+export function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
   const { name, imageUrl, price, quantity } = cartItem;
 
   return (
@@ -24,12 +24,19 @@ function CheckoutItem({ cartItem, clearItem, addItem, removeItem }) {
       </ImageContainer>
       <TextContainer>{name}</TextContainer>
       <QuantityContainer>
-        <div onClick={() => removeItem(cartItem)}>&#10094;</div>
+        <div data-testid="removeItem" onClick={() => removeItem(cartItem)}>
+          &#10094;
+        </div>
         <span>{quantity}</span>
-        <div onClick={() => addItem(cartItem)}>&#10095;</div>
+        <div data-testid="addItem" onClick={() => addItem(cartItem)}>
+          &#10095;
+        </div>
       </QuantityContainer>
       <TextContainer>{price}</TextContainer>
-      <RemoveButtonContainer onClick={() => clearItem(cartItem)}>
+      <RemoveButtonContainer
+        data-testid="clearItem"
+        onClick={() => clearItem(cartItem)}
+      >
         &#10005;
       </RemoveButtonContainer>
     </CheckoutItemContainer>
