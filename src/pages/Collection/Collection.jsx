@@ -10,7 +10,7 @@ import NotFound from '../NotFound';
 import CollectionItem from '../../components/CollectionItem';
 import { selectCollection } from '../../store/shop/shop.selectors';
 
-function CollectionPage({ collection }) {
+export function CollectionPage({ collection }) {
   if (!collection) {
     return <NotFound />;
   }

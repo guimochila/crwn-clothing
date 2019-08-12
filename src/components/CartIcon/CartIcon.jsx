@@ -10,7 +10,7 @@ import {
 import { toggleCartHidden } from '../../store/cart/cart.actions';
 import { selectCartItemsCount } from '../../store/cart/cart.selectors';
 
-function CartIcon({ toggleCartHidden, itemCount }) {
+export function CartIcon({ toggleCartHidden, itemCount }) {
   return (
     <CartIconContainer onClick={toggleCartHidden}>
       <ShoppingIcon />
