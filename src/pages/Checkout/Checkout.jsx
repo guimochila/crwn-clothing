@@ -11,7 +11,7 @@ import {
 import CheckoutItem from '../../components/CheckoutItem';
 import StripeButton from '../../components/StripeButton';
 
-function Checkout({ cartItems, total }) {
+export function Checkout({ cartItems, total }) {
   const [ref, inView] = useInView();
 
   return (
