@@ -1,5 +1,7 @@
 #
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.5
 jobs:
   build:
     docker:
@@ -26,4 +28,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: yarn test -- --coverage --watchAll=false
+      # Codecov upload coverage file
+      - codecov/upload:
+          file: coverage/*.json
+          flags: frontend
