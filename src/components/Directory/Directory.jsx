@@ -6,7 +6,7 @@ import { DirectoryMenuContainer } from './Directory.styles';
 import MenuItem from '../MenuItem';
 import { selectDirectorySections } from '../../store/directory/directory.selectors';
 
-function Directory({ sections }) {
+export function Directory({ sections }) {
   return (
     <DirectoryMenuContainer>
       {sections.map(({ id, ...props }) => (
