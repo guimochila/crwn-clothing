@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormInput component should render FormInput component 1`] = `
+.c0 {
+  position: relative;
+  margin: 45px 0;
+}
+
+.c0 input[type='password'] {
+  -webkit-letter-spacing: 0.3em;
+  -moz-letter-spacing: 0.3em;
+  -ms-letter-spacing: 0.3em;
+  letter-spacing: 0.3em;
+}
+
+.c1 {
+  background: none;
+  background-color: white;
+  color: grey;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid grey;
+  margin: 25px 0;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c1:focus ~ label {
+  top: -14px;
+  font-size: 12px;
+  color: black;
+}
+
+.c2 {
+  color: grey;
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  -webkit-transition: 300ms ease all;
+  transition: 300ms ease all;
+}
+
+.c2.shrink {
+  top: -14px;
+  font-size: 12px;
+  color: black;
+}
+
+<FormInput
+  handleChange={[MockFunction]}
+  label="email"
+  value="test@test.com"
+>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "c0",
+            "rules": Array [
+              "
+  position: relative;
+  margin: 45px 0;
+
+  input[type='password'] {
+    letter-spacing: 0.3em;
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="c0"
+      >
+        <FormInputContainer
+          onChange={[MockFunction]}
+          value="test@test.com"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": true,
+                  "lastClassName": "c1",
+                  "rules": Array [
+                    "
+  background: none;
+  background-color: white;
+  color: ",
+                    "grey",
+                    ";
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid ",
+                    "grey",
+                    ";
+  margin: 25px 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus ~ label {
+    ",
+                    "
+  top: -14px;
+  font-size: 12px;
+  color: ",
+                    "black",
+                    ";
+",
+                    "
+  }
+",
+                  ],
+                },
+                "displayName": "FormInputContainer",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "input",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+            onChange={[MockFunction]}
+            value="test@test.com"
+          >
+            <input
+              className="c1"
+              onChange={[MockFunction]}
+              value="test@test.com"
+            />
+          </StyledComponent>
+        </FormInputContainer>
+        <FormInputLabel
+          className="shrink"
+        >
+          <StyledComponent
+            className="shrink"
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-htpNat",
+                  "isStatic": true,
+                  "lastClassName": "c2",
+                  "rules": Array [
+                    "
+  color: ",
+                    "grey",
+                    ";
+  font-size: 16px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 300ms ease all;
+
+  &.shrink {
+    ",
+                    "
+  top: -14px;
+  font-size: 12px;
+  color: ",
+                    "black",
+                    ";
+",
+                    "
+  }
+",
+                  ],
+                },
+                "displayName": "FormInputLabel",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-htpNat",
+                "target": "label",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <label
+              className="shrink c2"
+            >
+              email
+            </label>
+          </StyledComponent>
+        </FormInputLabel>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</FormInput>
+`;
