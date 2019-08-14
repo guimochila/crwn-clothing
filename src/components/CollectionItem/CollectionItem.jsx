@@ -10,7 +10,7 @@ import {
   PriceContainer,
 } from './CollectionItem.styles';
 
-function CollectionItem({ item, addItem }) {
+export function CollectionItem({ item, addItem }) {
   const { name, price, imageUrl } = item;
 
   return (
