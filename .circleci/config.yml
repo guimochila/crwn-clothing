@@ -1,17 +1,14 @@
 #
-version: 2
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.5
 jobs:
   build:
     docker:
       # specify the version you desire here
       - image: circleci/node:12.4
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: .
+    working_directory: ~/repo
 
     steps:
       - checkout
@@ -31,4 +28,8 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: yarn test -- --coverage --watchAll=false
+      # Codecov upload coverage file
+      - codecov/upload:
+          file: coverage/*.json
+          flags: frontend

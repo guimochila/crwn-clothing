@@ -18,7 +18,7 @@ import {
   ProfileImage,
 } from './Header.styles';
 
-function Header({ currentUser, hidden, signOutStart }) {
+export function Header({ currentUser, hidden, signOutStart }) {
   const { displayName, photoURL } = currentUser || {};
 
   const firstName = displayName ? displayName.split(' ')[0] : null;

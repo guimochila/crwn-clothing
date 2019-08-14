@@ -45,6 +45,8 @@ export const OptionLink = styled(Link)`
   cursor: pointer;
 `;
 
+OptionLink.displayName = 'OptionLink';
+
 export const HeaderWelcome = styled.span`
   margin-left: 15px;
 

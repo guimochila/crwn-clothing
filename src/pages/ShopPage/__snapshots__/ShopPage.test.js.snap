@@ -1,6 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ShopPage should render ShopPage component 1`] = `
+.c0 {
+  height: 60vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(195,195,195,0.6);
+  border-radius: 50%;
+  border-top-color: #636767;
+  -webkit-animation: spin 1s ease-in-out infinite;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: czVDfN 1s ease-in-out infinite;
+}
+
 <BrowserRouter>
   <Router
     history={
@@ -103,7 +132,7 @@ exports[`ShopPage should render ShopPage component 1`] = `
                       "componentStyle": ComponentStyle {
                         "componentId": "sc-bdVaJa",
                         "isStatic": true,
-                        "lastClassName": "itPEQX",
+                        "lastClassName": "c0",
                         "rules": Array [
                           "
   height: 60vh;
@@ -127,7 +156,7 @@ exports[`ShopPage should render ShopPage component 1`] = `
                   forwardedRef={null}
                 >
                   <div
-                    className="sc-bdVaJa itPEQX"
+                    className="c0"
                   >
                     <styled.div>
                       <StyledComponent
@@ -138,7 +167,7 @@ exports[`ShopPage should render ShopPage component 1`] = `
                             "componentStyle": ComponentStyle {
                               "componentId": "sc-bwzfXH",
                               "isStatic": true,
-                              "lastClassName": "fZfiXf",
+                              "lastClassName": "c1",
                               "rules": Array [
                                 "
   display: inline-block;
@@ -148,18 +177,18 @@ exports[`ShopPage should render ShopPage component 1`] = `
   border-radius: 50%;
   border-top-color: #636767;
   animation: spin 1s ease-in-out infinite;
-  -webkit-animation: spin 1s ease-in-out infinite;
-
-  @keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  @-webkit-keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-    }
-  }
+  -webkit-animation: ",
+                                Keyframes {
+                                  "id": "sc-keyframes-czVDfN",
+                                  "inject": [Function],
+                                  "name": "czVDfN",
+                                  "rules": Array [
+                                    "@-webkit-keyframes czVDfN{to{-webkit-transform:rotate(360deg);}}",
+                                    "@keyframes czVDfN{to{-webkit-transform:rotate(360deg);}}",
+                                  ],
+                                  "toString": [Function],
+                                },
+                                " 1s ease-in-out infinite;
 ",
                               ],
                             },
@@ -176,7 +205,7 @@ exports[`ShopPage should render ShopPage component 1`] = `
                         forwardedRef={null}
                       >
                         <div
-                          className="sc-bwzfXH fZfiXf"
+                          className="c1"
                         />
                       </StyledComponent>
                     </styled.div>

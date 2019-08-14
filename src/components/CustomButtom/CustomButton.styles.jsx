@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const buttonStyles = css`
+export const buttonStyles = css`
   background-color: black;
   color: white;
   border: none;
@@ -12,7 +12,7 @@ const buttonStyles = css`
   }
 `;
 
-const invertedButtonStyles = css`
+export const invertedButtonStyles = css`
   background-color: white;
   color: black;
   border: 1px solid black;
@@ -24,7 +24,7 @@ const invertedButtonStyles = css`
   }
 `;
 
-const googleSignInStyles = css`
+export const googleSignInStyles = css`
   background-color: #4285f4;
   color: #fff;
 
@@ -34,7 +34,7 @@ const googleSignInStyles = css`
   }
 `;
 
-const getButtonStyles = props => {
+export const getButtonStyles = props => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
   }
