@@ -8,7 +8,7 @@ import {
 } from './CollectionPreview.styles';
 import CollectionItem from '../CollectionItem';
 
-function CollectionPreview({ title, items, match }) {
+export function CollectionPreview({ title, items, match }) {
   return (
     <CollectionPreviewContainer>
       <TitleLink to={`${match.url}/${title.toLowerCase()}`}>
