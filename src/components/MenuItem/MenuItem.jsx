@@ -9,7 +9,7 @@ import {
   ContentSubtitle,
 } from './MenuItem.styles';
 
-function MenuItem({ title, imageUrl, size, linkUrl, history, match }) {
+export function MenuItem({ title, imageUrl, size, linkUrl, history, match }) {
   return (
     <MenuItemContainer
       size={size}
