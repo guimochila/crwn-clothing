@@ -65,9 +65,9 @@
     ],
     "coverageThreshold": {
       "global": {
-        "functions": 60,
-        "lines": 60,
-        "statements": 60
+        "functions": 20,
+        "lines": 40,
+        "statements": 40
       }
     },
     "snapshotSerializers": [
