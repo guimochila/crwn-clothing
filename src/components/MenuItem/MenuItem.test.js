@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { MenuItem } from './MenuItem';
-import { tsThisType } from '@babel/types';
 
 describe('MenuItem component', () => {
   let wrapper;
