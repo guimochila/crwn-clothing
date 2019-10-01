@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 import CartItem from '../CartItem';
 import {
@@ -10,8 +10,22 @@ import {
 import { toggleCartHidden } from '../../store/cart/cart.actions';
 
 function CartDropDown({ cartItems, history, dispatch }) {
+  const container = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutSide = event => {
+      if (container.current && !container.current.contains(event.target)) {
+        dispatch(toggleCartHidden());
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutSide);
+
+    return () => document.removeEventListener('mousedown', handleClickOutSide);
+  }, [dispatch]);
+
   return (
-    <CartDropDownContainer>
+    <CartDropDownContainer ref={container}>
       <CartItemsContainer>
         {cartItems.length ? (
           cartItems.map(cartItem => (
