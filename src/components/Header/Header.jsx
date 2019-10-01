@@ -39,10 +39,14 @@ export function Header({ currentUser, hidden, signOutStart }) {
           <OptionLink to="/signin">SIGN IN</OptionLink>
         )}
         <CartIcon />
-        {firstName && <HeaderWelcome>Welcome {firstName}</HeaderWelcome>}
-        <ProfileImageContainer>
-          <ProfileImage photoURL={photoURL} />
-        </ProfileImageContainer>
+        {firstName && (
+          <>
+            <HeaderWelcome>Welcome {firstName}</HeaderWelcome>
+            <ProfileImageContainer>
+              <ProfileImage photoURL={photoURL} />
+            </ProfileImageContainer>
+          </>
+        )}
       </OptionsContainer>
       {hidden ? null : <CartDropDownContainer />}
     </HeaderContainer>
